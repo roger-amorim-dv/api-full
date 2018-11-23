@@ -13,6 +13,6 @@ import br.com.api.dto.ControleLancamentoDTO;
 @Repository
 public interface ControleLancamentoRepository extends JpaRepository<ControleLancamento, Long>{
 
-	@Query(value = "SELECT * FROM ControleLancamento ", nativeQuery = true)
+	@Query(value = "SELECT * FROM CTRL_LANC ", nativeQuery = true)
 	List<ControleLancamentoDTO> findAllControleLancamento(Pageable page);
 }

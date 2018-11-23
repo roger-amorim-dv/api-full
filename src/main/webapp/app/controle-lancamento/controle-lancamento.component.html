@@ -1,0 +1,58 @@
+<div class="ui-g">
+    <div class="ui-g-12">
+        <h3 class="modal-header">Controle Lançamento</h3>
+    </div>
+</div>
+<div class="ui-g">
+    <div class="ui-g-12" >
+        <div class="ui-widget-overlay" style="z-index: 1055; top: 50%; height: auto; background-color: transparent; position: fixed; margin: auto; width: 100%;">
+            <p-progressspinner class="ui-md-offset-5">
+                <div class="ui-progress-spinner">
+                    <svg class="ui-progress-spinner-svg" viewBox="25 25 50 50" style="animation-duration: 2s;">
+                        <circle class="ui-progress-spinner-circle" cx="50" cy="50" r="20" stroke-miterlimit="10" fill="none" stroke-width="2"></circle>
+                    </svg>
+                </div>
+            </p-progressspinner>
+        </div>
+    </div>
+</div>
+<div class="ui-g">
+    <div class="ui-g-12">
+        <p-messages [(value)]="msgs"></p-messages>
+    </div>
+</div>
+<div class="ui-g">
+    <div class="ui-g-12" style="margin: 20px 20px 0px 20px;">
+        <p-table [value]="controle" [paginator]="true" [rows]="5">
+            <ng-template pTemplate="caption">
+                <span class="ui-float-label">
+                    <i class="fa fa-search icone-filtro"></i>
+                    <input type="text" pInputText id="filtro" name="filtro" size="50" 
+                        (input)="tt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+                </span>
+            </ng-template>
+            <ng-template pTemplate="body" let-controleLancamento>
+                <tr>
+                    <td>{{ ControleLancamento.numeroRemessaBanco }}</td>
+                    <td>{{ ControleLancamento.nomeSituacaoRemessa }}</td>
+                    <td>{{ ControleLancamento.nomeTipoOperacao }}</td>
+                    <td>{{ ControleLancamento.dataEfetivaLancamento }}</td>
+                    <td>{{ ControleLancamento.dataLancamentoContaCorrenteCliente }}</td>
+                    <td>{{ ControleLancamento.numeroEvento }}</td>
+                    <td>{{ ControleLancamento.descricaoGrupoPagamento }}</td>
+                    <td>{{ ControleLancamento.codigoIdentificadorUnico }}</td>
+                    <td>{{ ControleLancamento.nomeBanco }}</td>
+                    <td>{{ ControleLancamento.quantidadeLancamentoRemessa }}</td>
+                    <td>{{ ControleLancamento.numeroRaizCNPJ }}</td>
+                    <td>{{ ControleLancamento.numeroSufixoCNPJ }}</td>
+                    <td>{{ ControleLancamento.valorLancamentoRemessa }}</td>
+                    <td>{{ ControleLancamento.dateLancamentoContaCorrenteCliente }}</td>
+                    <td>{{ ControleLancamento.dateEfetivaLancamento }}</td>
+                    <td>{{ ControleLancamento.quantidadeLancamentos }}</td>
+                    <td>{{ ControleLancamento.quantidadeRemessas }}</td>
+                    <td>{{ ControleLancamento.valorLancamentos }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
